@@ -316,14 +316,7 @@ class XCiT(nn.Module):
         for blk in mdl.cls_attn_blocks:
             x = blk(x)
         x = mdl.norm(x)
-
-        # x = self.linear_1(x.transpose(1, 2))
-        # x = self.linear(x)
-
         x = self.Flatten(x)
-        # feature = x
-        # feature = x.transpose(1, 2)[:, :, :1].squeeze()
-
         return x
 
 def xcit_nano(
@@ -405,10 +398,6 @@ def xcit_tiny12(
             Dropout rate for training
 
     """
-    # model_exists = os.path.exists(path)
-    # if not model_exists and pretrained:
-    #     file_id = file_ids["xcit_tiny12"]
-    #     dl = gdown.download(id=file_id, output=path)
     mdl = XCiT(
         timm.create_model(
             'xcit_tiny_12_p16_224',
@@ -421,21 +410,10 @@ def xcit_tiny12(
         patch_len=patch_len,
         in_chans=in_chans,
     )
-    # if pretrained:
-    #     mdl.load_state_dict(torch.load(path), strict=False)
-    # if num_classes != 53:
-    #     mdl.grouper = nn.Conv1d(mdl.grouper.in_channels, num_classes, 1)
     return mdl
 
 
 __all__ = ["efficientnet_b0", "efficientnet_b2", "efficientnet_b4"]
-
-# file_ids = {
-#     "efficientnet_b0": "1ZQIBRZJiwwjeP4rB7HxxFzFro7RbxihG",
-#     "efficientnet_b2": "1yaPZS5bbf6npHfUVdswvUnsJb8rDHlaa",
-#     "efficientnet_b4": "1KCoLY5X0rIc_6ArmZRdkxZOOusIHN6in",
-# }
-
 
 class SqueezeExcite(nn.Module):
     def __init__(
