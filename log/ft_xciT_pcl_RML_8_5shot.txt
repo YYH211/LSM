@@ -1,0 +1,21 @@
+
+ model_layer_sum:4 [epoch 1] train_loss_avg: 1.610 train_acc: 28.000 test_acc_top1: 25.560 test_acc_top5: 100.000 best_test_acc_top1:25.560 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 101] train_loss_avg: 1.130 train_acc: 80.000 test_acc_top1: 69.000 test_acc_top5: 100.000 best_test_acc_top1:69.000 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 201] train_loss_avg: 0.990 train_acc: 88.000 test_acc_top1: 74.520 test_acc_top5: 100.000 best_test_acc_top1:74.520 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 301] train_loss_avg: 0.900 train_acc: 88.000 test_acc_top1: 75.840 test_acc_top5: 100.000 best_test_acc_top1:75.840 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 401] train_loss_avg: 0.880 train_acc: 84.000 test_acc_top1: 75.440 test_acc_top5: 100.000 best_test_acc_top1:75.840 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 501] train_loss_avg: 0.810 train_acc: 88.000 test_acc_top1: 78.080 test_acc_top5: 100.000 best_test_acc_top1:78.080 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 601] train_loss_avg: 0.880 train_acc: 92.000 test_acc_top1: 77.840 test_acc_top5: 100.000 best_test_acc_top1:78.080 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 701] train_loss_avg: 0.820 train_acc: 88.000 test_acc_top1: 78.720 test_acc_top5: 100.000 best_test_acc_top1:78.720 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 801] train_loss_avg: 0.690 train_acc: 96.000 test_acc_top1: 80.680 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 901] train_loss_avg: 0.710 train_acc: 92.000 test_acc_top1: 80.040 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 1001] train_loss_avg: 0.770 train_acc: 88.000 test_acc_top1: 79.000 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 1101] train_loss_avg: 0.710 train_acc: 84.000 test_acc_top1: 78.040 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 1201] train_loss_avg: 0.730 train_acc: 88.000 test_acc_top1: 78.720 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 1301] train_loss_avg: 0.700 train_acc: 88.000 test_acc_top1: 78.960 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 1401] train_loss_avg: 0.650 train_acc: 92.000 test_acc_top1: 80.320 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 1501] train_loss_avg: 0.780 train_acc: 92.000 test_acc_top1: 79.200 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 1601] train_loss_avg: 0.720 train_acc: 88.000 test_acc_top1: 79.680 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 1701] train_loss_avg: 0.710 train_acc: 92.000 test_acc_top1: 79.600 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 1801] train_loss_avg: 0.660 train_acc: 92.000 test_acc_top1: 79.760 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000
+ model_layer_sum:4 [epoch 1901] train_loss_avg: 0.680 train_acc: 92.000 test_acc_top1: 79.320 test_acc_top5: 100.000 best_test_acc_top1:80.680 best_test_acc_top5:100.000

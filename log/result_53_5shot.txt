@@ -1,0 +1,21 @@
+Snr = -20  ACC:20.560 
+ Snr = -18  ACC:22.080 
+ Snr = -16  ACC:21.480 
+ Snr = -14  ACC:20.480 
+ Snr = -12  ACC:30.440 
+ Snr = -10  ACC:48.600 
+ Snr = -8  ACC:40.160 
+ Snr = -6  ACC:52.880 
+ Snr = -4  ACC:75.760 
+ Snr = -2  ACC:80.360 
+ Snr = 0  ACC:86.120 
+ Snr = 2  ACC:95.640 
+ Snr = 4  ACC:79.200 
+ Snr = 6  ACC:96.320 
+ Snr = 8  ACC:80.680 
+ Snr = 10  ACC:76.840 
+ Snr = 12  ACC:92.680 
+ Snr = 14  ACC:94.400 
+ Snr = 16  ACC:77.320 
+ Snr = 18  ACC:86.160 
+ 
