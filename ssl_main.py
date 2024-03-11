@@ -22,30 +22,23 @@ parser.add_argument('--ev_epochs', type=int, default=2000,
                     help='Total evaluation-training epochs for the framework')
 parser.add_argument('--ev_lr', type=float, default=0.0001,
                     help='Pre-training learning rate of the optimizer')
-# Logging argument
-parser.add_argument('--log_interval', type=int, default=240)
 # Network argument
 parser.add_argument('--framework', type=str, default='lsm',
                     choices=['lsm'],
                     help='name of framework')
 parser.add_argument('--backbone', type=str, default='xciT',
-                    choices=['efficient_net_b0',
-                             'efficient_net_b2', 'efficient_net_b4','xciT'],
-                    help='name of backbone network')
+                    choices=['xciT'], help='name of backbone network')
 parser.add_argument('--emb_size', type=int, default=1344,
                     help='embedding size of the backbone')
 parser.add_argument('--in_channels', type=int, default=2,
                     help='input channels')
-
-
-
 # Common dataset argument
 parser.add_argument('--batch_size', type=int, default=1400,
                     help='batch size of the loading dataset')
 parser.add_argument('--patch_len', type=int, default=128 // 10,
                     help='patch len of the data')
-
-
+parser.add_argument('--snr', type=int, default=8, help='SNR of the signal data')
+parser.add_argument('--classes', type=int, default=5, help='Fine-tuning and test classes')
 
 def model_saving_config(args):
     model_root = './Pre_training_pt'
@@ -214,13 +207,10 @@ def set_seed(seed=666):
 
 if __name__ == '__main__':
     args = parser.parse_args()
-    os.environ["CUDA_VISIBLE_DEVICES"] = "1,"
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(args.cuda)
     os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
     device = torch.device("cuda" if torch.cuda.is_available() else 'cpu')
     args.device = device
-    args.patch_len = 128 // 10
-    args.classes = 5
-    args.snr = 8
     set_seed(args.seed)
     st_time = time.time()
 
