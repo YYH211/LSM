@@ -217,19 +217,19 @@ if __name__ == '__main__':
     args.classes = 5
     args.centers = 40
     args.in_channels = 2
-    args.snr = 10
+    args.snr = 8
     args.framework = "pcl"
     set_seed(args.seed)
     st_time = time.time()
 
     train_dataloader, query_dataloader, test_dataloader = dataset_RML(args)
-    for train_flag in [True, False]:
+    for train_flag in [False, False]:
         args.pre_train = train_flag
         if args.pre_train:
             args.model_name = model_saving_config(args)
             pre_train(args, train_dataloader)
         else:
-            # args.model_name = './Pre_training_pt/RML/pcl+1-10_xciT_1400_12_pr_epochs300_min_loss.pth'
+            args.model_name = './Pre_training_pt/RML/pcl_xciT_1400_12_300_8_min_loss.pth'
             print("Fine-tuning samples:",len(query_dataloader.dataset), "; Test samples:",len(test_dataloader.dataset))
             acc = fine_tuning_and_test(args, query_dataloader, test_dataloader)
             print('Snr = ',args.snr,' Final accuracy: ', acc)
