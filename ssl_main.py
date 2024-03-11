@@ -25,8 +25,8 @@ parser.add_argument('--ev_lr', type=float, default=0.0001,
 # Logging argument
 parser.add_argument('--log_interval', type=int, default=240)
 # Network argument
-parser.add_argument('--framework', type=str, default='pcl',
-                    choices=['pcl'],
+parser.add_argument('--framework', type=str, default='lsm',
+                    choices=['lsm'],
                     help='name of framework')
 parser.add_argument('--backbone', type=str, default='xciT',
                     choices=['efficient_net_b0',
@@ -34,6 +34,11 @@ parser.add_argument('--backbone', type=str, default='xciT',
                     help='name of backbone network')
 parser.add_argument('--emb_size', type=int, default=1344,
                     help='embedding size of the backbone')
+parser.add_argument('--in_channels', type=int, default=2,
+                    help='input channels')
+
+
+
 # Common dataset argument
 parser.add_argument('--batch_size', type=int, default=1400,
                     help='batch size of the loading dataset')
@@ -55,8 +60,8 @@ def model_saving_config(args):
     return model_name
 
 def pre_train(args, train_dataloader):
-    model = get_model(args.backbone, args.framework, args.patch_len,
-                      args.emb_size, args.in_channels, args.classes,  args.centers, backbone_pretrain=False)
+    model = get_model(args.backbone, args.patch_len,
+                      args.emb_size, args.in_channels, args.classes, backbone_pretrain=False)
 
     if torch.cuda.device_count() > 1:
         print('Available GPUs: ' + str(torch.cuda.device_count()))
@@ -93,8 +98,8 @@ def pre_train(args, train_dataloader):
     print('Save model success')
 
 def fine_tuning_and_test(args, train_dataloader, test_dataloader):
-    model = get_model(args.backbone, args.framework, args.patch_len,
-                      args.emb_size, args.in_channels, args.classes, args.centers,
+    model = get_model(args.backbone, args.patch_len,
+                      args.emb_size, args.in_channels, args.classes,
                       backbone_pretrain=False).to(args.device)
 
     state_dict = torch.load(args.model_name)
@@ -215,10 +220,7 @@ if __name__ == '__main__':
     args.device = device
     args.patch_len = 128 // 10
     args.classes = 5
-    args.centers = 40
-    args.in_channels = 2
     args.snr = 8
-    args.framework = "pcl"
     set_seed(args.seed)
     st_time = time.time()
 
@@ -229,7 +231,7 @@ if __name__ == '__main__':
             args.model_name = model_saving_config(args)
             pre_train(args, train_dataloader)
         else:
-            args.model_name = './Pre_training_pt/RML/pcl_xciT_1400_12_300_8_min_loss.pth'
+            args.model_name = './Pre_training_pt/RML/lsm_xciT_1400_12_300_8_min_loss.pth'
             print("Fine-tuning samples:",len(query_dataloader.dataset), "; Test samples:",len(test_dataloader.dataset))
             acc = fine_tuning_and_test(args, query_dataloader, test_dataloader)
             print('Snr = ',args.snr,' Final accuracy: ', acc)
